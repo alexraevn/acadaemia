@@ -1,0 +1,11 @@
+Commands:
+
+see/examine/look -
+	print "You're standing in" + description of room
+	elif item: print description of item
+
+go (North, South, East, West)
+	change loc to room(n/s/e/w)
+	print "You're now in " + description of room
+
+
