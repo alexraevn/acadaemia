@@ -1,9 +1,12 @@
 #   /     Acadaemia 1.0     \
-# _/     A game by Raevn     \_
-import time
-import random
+# _/  A text-based adventure \_
+import time, random, json
 import sources.room as room
 import sources.player as player
+
+o = open('/home/alex22x/bin/acadaemia/sources/items.json', 'r')
+txt = o.read()
+itemsdic = json.loads(txt)
 
 # Commands:
 see = ['see', 'look', 'examine']
@@ -17,17 +20,18 @@ class Game:
 	def __init__(self):
 
 		self.loc = room.getRoom(1)
-		self.player = player.Player(4.0, items=['note'])
+		self.player = player.Player(4.0)
+		self.player.takeItem('note')
 
-	def examine(self, i=None):
+	def examine(self, item=None):
 
-		if i == None:
+		if item == None:
 			print self.loc.name
 			time.sleep(0.5)
 			print self.loc.description
 
 		else:
-			print 'There are no items yet.'
+			print itemsdic[item]
 
 	def move(self, direction):
 
@@ -45,10 +49,9 @@ while inGame:
 	words = c.split(' ', -1)
 
 	for i in words:
-		if i in see:
 			for z in words:
-				if z in Game.player.items:
-					Game.examine(i=z)
+				if z in Game.player.items and i in see:
+					Game.examine(item=z)
 					done = True
 					break
 
@@ -77,9 +80,10 @@ while inGame:
 			exit()
 
 	if words[0] in h:
-		print "Acadaemia:\nUse `look` or `examine` to `see` things."
+		print "Acadaemia:\nUse `look` or `see` to `examine` your location."
 		print "Type {north, south, east, or west} to move in those directions."
-		print "Use `inventory` to list items in your inventory [Not yet implemented]."
+		print "Use `inventory` to list items in your inventory."
+		print "Try examining items."
 		print "`exit` will exit the game."
 		done = True
 
