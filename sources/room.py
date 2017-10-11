@@ -1,8 +1,10 @@
 import json
+import os
 
 def getRoom(n):
 
-	o = open('/home/alex22x/bin/acadaemia/sources/rooms/'+str(n)+'.json', 'r')
+	c = os.path.dirname(os.path.realpath(__file__))
+	o = open(os.path.join(c,'rooms/')+str(n)+'.json', 'r')
 	txt = o.read()
 	roomdic = json.loads(txt)
 	r = Room(**roomdic)
