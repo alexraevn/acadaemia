@@ -11,11 +11,18 @@ def getRoom(n):
 	return r
 
 class Room:
-	def __init__(self, n, name, description, items, state, neighbors):
+	def __init__(self, n, name, description, size, items, state, neighbors):
 
 		self.n = n
 		self.name = name
 		self.description = description
+		self.size = size
 		self.items = items
 		self.state = state
 		self.neighbors = neighbors
+
+		# self.grid = 
+
+	# def populate_room(self)
+
+		

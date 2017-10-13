@@ -1,0 +1,7 @@
+{"n":"2",
+"name":"South Hall",
+"description":"a long hall extending west. You can see a TELEPHONE booth at the other end.",
+"size":[4,4],
+"items":null,
+"state":null,
+"neighbors":{"north":"1"}}

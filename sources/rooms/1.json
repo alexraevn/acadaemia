@@ -1,6 +1,7 @@
 {"n":"1",
 "name":"Office 1.334",
 "description":"an office with two desks and two computers. There is an old, yet comfortable looking, chair.",
-"items":null,
+"size":[5,5],
+"items":{"1":{"id":"1","name":"desk","alw":[3,2,1]},"2":{"id":"2","name":"chair","alw":[4,1,1]}},
 "state":null,
 "neighbors":{"south":"2"}}
