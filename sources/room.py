@@ -37,4 +37,9 @@ class Room:
         for f in self.furniture:
             name = f[0]
             shape = furnituredic[name]
+
+
+            # dim_inroom = 
+            
+
             # populate the self.grid with furniture items
